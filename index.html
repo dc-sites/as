@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asian Hub | Premium Video Collection</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo"><i class="fas fa-film"></i> ASIAN HUB</div>
+    <button class="theme-toggle" id="themeToggle">
+      <i class="fas fa-moon"></i> <span>Dark Mode</span>
+    </button>
+  </header>
+
+  <main class="container">
+    <div class="filters" id="collectionFilters">
+      <button class="filter-btn active" data-collection="all">All</button>
+      <!-- Collections injected here -->
+    </div>
+
+    <div class="video-grid" id="videoGrid">
+      <!-- Video cards injected here -->
+    </div>
+
+    <div class="load-more-container">
+      <button class="load-more-btn" id="loadMoreBtn">See More <i class="fas fa-chevron-down"></i></button>
+    </div>
+  </main>
+
+  <!-- Video Player Modal -->
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal"><i class="fas fa-times"></i></button>
+      <!-- oncontextmenu="return false" prevents right-click -->
+      <video id="mainVideo" controls controlsList="nodownload" oncontextmenu="return false;">
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="modal-info">
+        <h2 id="modalTitle">Video Title</h2>
+        <p id="modalDesc">Video description goes here.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
